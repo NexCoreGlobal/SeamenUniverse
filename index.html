@@ -462,6 +462,14 @@
     @media (prefers-reduced-motion: reduce) {
       * { transition: none !important; }
     }
+
+    /* ── PRINT / SAVE AS PDF ─────────────────────── */
+    @media print {
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+      nav, #topBtn { display: none !important; }
+      h1 { background: none !important; -webkit-text-fill-color: var(--gold-lt) !important; color: var(--gold-lt) !important; }
+      section { break-inside: avoid-page; }
+    }
   </style>
 </head>
 <body>
@@ -549,7 +557,7 @@
         <span class="commander-sub">이순신 — Korea, 1545–1598</span>
         <ul class="commander-traits">
           <li>23 battles · 23 victories · zero defeats</li>
-          <li>World's greatest naval commander, ranked #1</li>
+          <li>Commanded the Joseon fleet through the Imjin War, 1592–1598</li>
           <li>Tidal traps · psychological warfare · sacrifice</li>
           <li>Awakens the Golden Turtle Ship through self-sacrifice</li>
         </ul>
@@ -569,7 +577,7 @@
         <span class="commander-sub">Horatio Nelson — Britain, 1758–1805</span>
         <ul class="commander-traits">
           <li>Hero of Trafalgar · Britain's greatest admiral</li>
-          <li>World's greatest naval commander, ranked #2</li>
+          <li>Victor at the Nile, Copenhagen and Trafalgar</li>
           <li>Crossing the T · decisive breakthrough · charisma</li>
           <li>Creates the breach · Yi Sun-sin decides the war</li>
         </ul>
@@ -749,7 +757,7 @@
     <div class="contact-details">
       <div><strong style="color:var(--white)">Ki Ho Kim</strong> · Creator &amp; Rights Holder</div>
       <div><a href="mailto:seamenuniverse@gmail.com">seamenuniverse@gmail.com</a></div>
-      <div>+82-10-3345-0579</div>
+      <div>+84-978-300-942 (Vietnam)</div>
       <div><a href="https://www.seamenuniverse.com">www.seamenuniverse.com</a></div>
     </div>
   </div>
