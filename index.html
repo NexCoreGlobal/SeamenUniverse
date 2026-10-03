@@ -22,18 +22,23 @@
       --gold-lt:   #e8d08a;
       --gold-dim:  #7a6228;
       --white:     #f5f0e8;
-      --gray:      #8a96a8;
+      --gray:      #b9c4d0;
       --border:    rgba(201,168,76,.18);
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; font-size: 17px; }
 
+    html { background:#061a2b; }
     body {
-      background: var(--navy);
+      background:
+        radial-gradient(1200px 600px at 20% -10%, rgba(80,170,200,.18), transparent 60%),
+        radial-gradient(900px 500px at 90% 10%, rgba(201,168,76,.08), transparent 60%),
+        linear-gradient(180deg, #0d3550 0%, #0a2840 18%, #071c30 45%, #05121f 75%, #030b14 100%);
+      background-attachment: fixed;
       color: var(--white);
       font-family: 'Inter', sans-serif;
-      font-weight: 300;
-      line-height: 1.7;
+      font-weight: 400;
+      line-height: 1.75;
       overflow-x: hidden;
     }
 
@@ -49,14 +54,14 @@
     }
     .nav-brand {
       font-family: 'Cinzel', serif;
-      font-size: .8rem;
-      letter-spacing: .22em;
+      font-size: 1rem;
+      letter-spacing: .22em; white-space: nowrap;
       color: var(--gold);
       text-decoration: none;
     }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links { display: flex; gap: 1.4rem; list-style: none; }
     .nav-links a {
-      font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
+      font-size: 0.8rem; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap;
       color: var(--gray); text-decoration: none;
       transition: color .2s;
     }
@@ -75,14 +80,14 @@
     .hero-bg {
       position: absolute; inset: 0;
       background:
-        linear-gradient(to bottom, rgba(7,17,31,.35) 0%, rgba(7,17,31,.82) 70%, var(--navy) 100%),
+        linear-gradient(to bottom, rgba(7,17,31,.35) 0%, rgba(7,17,31,.8) 70%, rgba(7,17,31,0) 100%),
         url('The Golden Turtle Ship.jpg') center/cover no-repeat;
     }
     .hero-content { position: relative; z-index: 2; max-width: 860px; }
 
     .universe-label {
       font-family: 'Cinzel', serif;
-      font-size: .7rem; letter-spacing: .3em;
+      font-size: 0.88rem; letter-spacing: .3em;
       color: var(--gold); margin-bottom: 1.6rem;
       display: block;
     }
@@ -120,7 +125,7 @@
     .hero-cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
     .btn {
       display: inline-block; padding: .8rem 2.2rem;
-      font-family: 'Cinzel', serif; font-size: .72rem;
+      font-family: 'Cinzel', serif; font-size: 0.9rem;
       letter-spacing: .18em; text-decoration: none;
       border: 1px solid var(--gold); color: var(--gold);
       transition: background .25s, color .25s;
@@ -148,7 +153,7 @@
 
     .eyebrow {
       font-family: 'Cinzel', serif;
-      font-size: .65rem; letter-spacing: .3em;
+      font-size: 0.81rem; letter-spacing: .3em;
       color: var(--gold); text-transform: uppercase;
       display: block; margin-bottom: 1rem;
     }
@@ -163,10 +168,10 @@
       background: var(--gold);
       margin-bottom: 2.4rem;
     }
-    p { color: rgba(245,240,232,.72); font-size: .98rem; line-height: 1.85; }
+    p { color: rgba(245,240,232,.72); font-size: 1.06rem; line-height: 1.85; }
 
     /* ── CONCEPT ─────────────────────────────────── */
-    #concept { background: var(--navy-mid); }
+    #concept { background: linear-gradient(to bottom, transparent, rgba(4,16,28,.3) 18%, rgba(4,16,28,.3) 82%, transparent); }
     .concept-grid {
       display: grid;
       grid-template-columns: repeat(3,1fr);
@@ -182,20 +187,20 @@
     }
     .concept-card h3 {
       font-family: 'Cinzel', serif;
-      font-size: .88rem; letter-spacing: .12em;
+      font-size: 1.06rem; letter-spacing: .12em;
       color: var(--gold); margin-bottom: .7rem;
     }
-    .concept-card p { font-size: .88rem; }
+    .concept-card p { font-size: 1.06rem; }
 
     /* ── COMMANDERS ──────────────────────────────── */
-    #commanders { background: var(--navy); }
+    #commanders { background: transparent; }
     .vs-grid {
       display: grid;
       grid-template-columns: 1fr auto 1fr;
       gap: 0; margin-top: 3rem; align-items: stretch;
     }
     .commander-card {
-      background: var(--navy-card);
+      background: rgba(15,35,64,.72);
       border: 1px solid var(--border);
       padding: 2.8rem 2.4rem;
     }
@@ -208,7 +213,7 @@
     }
     .commander-role {
       font-family: 'Cinzel', serif;
-      font-size: .65rem; letter-spacing: .25em;
+      font-size: 0.81rem; letter-spacing: .25em;
       color: var(--gold); margin-bottom: .5rem; display: block;
     }
     .commander-name {
@@ -218,21 +223,21 @@
     }
     .commander-sub {
       font-family: 'Cinzel', serif;
-      font-size: .75rem; color: var(--gray);
+      font-size: 0.94rem; color: var(--gray);
       margin-bottom: 1.4rem; display: block;
     }
     .commander-traits {
       list-style: none; margin-bottom: 1.4rem;
     }
     .commander-traits li {
-      font-size: .85rem; color: rgba(245,240,232,.65);
+      font-size: 1.06rem; color: rgba(245,240,232,.65);
       padding: .3rem 0;
       border-bottom: 1px solid rgba(255,255,255,.05);
     }
     .commander-traits li::before { content: '· '; color: var(--gold); }
     .commander-link {
       display: inline-block; margin: .2rem 0 1.2rem;
-      font-family: 'Cinzel', serif; font-size: .72rem; letter-spacing: .14em;
+      font-family: 'Cinzel', serif; font-size: 0.9rem; letter-spacing: .14em;
       color: var(--gold); text-decoration: none;
       border-bottom: 1px solid rgba(201,168,76,.4); padding-bottom: .2rem;
     }
@@ -252,17 +257,17 @@
     }
     .vs-text {
       font-family: 'Cinzel', serif;
-      font-size: .6rem; letter-spacing: .4em;
+      font-size: 0.75rem; letter-spacing: .4em;
       color: var(--gold); writing-mode: vertical-rl;
       text-orientation: mixed;
     }
     .contrast-table {
       width: 100%; border-collapse: collapse;
       margin-top: 3.5rem;
-      font-size: .85rem;
+      font-size: 1.06rem;
     }
     .contrast-table th {
-      font-family: 'Cinzel', serif; font-size: .65rem;
+      font-family: 'Cinzel', serif; font-size: 0.81rem;
       letter-spacing: .15em; color: var(--gold);
       padding: .9rem 1.2rem; text-align: left;
       background: rgba(201,168,76,.07);
@@ -282,7 +287,7 @@
     }
 
     /* ── ENEMY ───────────────────────────────────── */
-    #enemy { background: var(--navy-mid); }
+    #enemy { background: linear-gradient(to bottom, transparent, rgba(4,16,28,.3) 18%, rgba(4,16,28,.3) 82%, transparent); }
     .enemy-layout {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -300,16 +305,16 @@
       display: flex; gap: 1rem;
       padding: 1rem 0;
       border-bottom: 1px solid rgba(255,255,255,.05);
-      font-size: .88rem; color: rgba(245,240,232,.7);
+      font-size: 1.06rem; color: rgba(245,240,232,.7);
     }
     .enemy-points li .num {
       font-family: 'Cinzel', serif;
-      font-size: .7rem; color: var(--gold);
+      font-size: 0.88rem; color: var(--gold);
       min-width: 28px; padding-top: .1rem;
     }
 
     /* ── TURTLE SHIP ─────────────────────────────── */
-    #turtleship { background: var(--navy); }
+    #turtleship { background: transparent; }
     .ship-evolution {
       display: flex; align-items: center; justify-content: center;
       gap: 2rem; margin: 3rem 0 4rem; flex-wrap: wrap;
@@ -327,7 +332,7 @@
       display: flex; align-items: center;
     }
     .ship-label {
-      font-family: 'Cinzel', serif; font-size: .65rem;
+      font-family: 'Cinzel', serif; font-size: 0.81rem;
       letter-spacing: .18em; color: var(--gray);
       margin-top: .8rem; display: block;
     }
@@ -346,10 +351,10 @@
       border: 1px solid var(--gold-dim);
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      font-size: .65rem; color: var(--gold);
+      font-size: 0.81rem; color: var(--gold);
       margin: 0 auto .8rem;
     }
-    .step p { font-size: .77rem; line-height: 1.5; }
+    .step p { font-size: 0.96rem; line-height: 1.5; }
     .abilities-grid {
       display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem;
     }
@@ -360,11 +365,11 @@
     }
     .ability-card .icon { font-size: 1.4rem; margin-bottom: .8rem; display: block; }
     .ability-card h4 {
-      font-family: 'Cinzel', serif; font-size: .8rem;
+      font-family: 'Cinzel', serif; font-size: 1rem;
       letter-spacing: .1em; color: var(--gold);
       margin-bottom: .6rem;
     }
-    .ability-card p { font-size: .85rem; }
+    .ability-card p { font-size: 1.06rem; }
     .awakening-trigger {
       margin-top: 2.5rem; padding: 1.6rem 2rem;
       border: 1px solid var(--gold-dim);
@@ -376,12 +381,12 @@
     }
 
     /* ── IP ──────────────────────────────────────── */
-    #ip { background: var(--navy-mid); }
+    #ip { background: linear-gradient(to bottom, transparent, rgba(4,16,28,.3) 18%, rgba(4,16,28,.3) 82%, transparent); }
     .ip-grid {
       display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
       margin-top: 2.5rem;
     }
-    .ip-table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+    .ip-table { width: 100%; border-collapse: collapse; font-size: 1.06rem; }
     .ip-table td {
       padding: .8rem 1rem;
       border-bottom: 1px solid rgba(255,255,255,.05);
@@ -394,14 +399,14 @@
       padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,.05);
     }
     .roadmap .tier {
-      font-family: 'Cinzel', serif; font-size: .65rem;
+      font-family: 'Cinzel', serif; font-size: 0.81rem;
       color: var(--gold); min-width: 60px; padding-top: .15rem;
     }
-    .roadmap .desc { font-size: .88rem; color: rgba(245,240,232,.7); }
+    .roadmap .desc { font-size: 1.06rem; color: rgba(245,240,232,.88); }
 
     /* ── CONTACT ─────────────────────────────────── */
     #contact {
-      background: var(--navy);
+      background: transparent;
       text-align: center;
       padding: 100px 5vw;
     }
@@ -417,7 +422,7 @@
       display: flex; flex-direction: column;
       align-items: center; gap: .5rem;
       margin: 2.5rem auto;
-      font-size: .88rem; color: var(--gray);
+      font-size: 1.06rem; color: var(--gray);
     }
     .contact-details a { color: var(--gold); text-decoration: none; }
     .contact-details a:hover { color: var(--gold-lt); }
@@ -428,7 +433,7 @@
       border-top: 1px solid var(--border);
       padding: 2rem 5vw;
       text-align: center;
-      font-size: .73rem; color: var(--gray);
+      font-size: 0.91rem; color: var(--gray);
       letter-spacing: .06em;
     }
     footer .brand { color: var(--gold); font-family: 'Cinzel', serif; }
@@ -449,9 +454,29 @@
       .nav-links { display: none; }
       .hero-ships { gap: 1.5rem; }
       .awakening-steps { grid-template-columns: repeat(2,1fr); }
-      .contrast-table { font-size: .78rem; }
+      .contrast-table { font-size: 0.98rem; }
       .contrast-table td, .contrast-table th { padding: .7rem .8rem; }
     }
+
+    /* ── SEA ATMOSPHERE ─────────────────────────── */
+    body::before {
+      content:""; position:fixed; inset:-20%; pointer-events:none; z-index:0; opacity:.35;
+      background:
+        radial-gradient(closest-side at 30% 40%, rgba(159,211,230,.10), transparent),
+        radial-gradient(closest-side at 70% 60%, rgba(159,211,230,.07), transparent),
+        radial-gradient(closest-side at 50% 80%, rgba(201,168,76,.05), transparent);
+      animation: drift 26s ease-in-out infinite alternate;
+    }
+    @keyframes drift { from{transform:translate3d(-3%,-2%,0) scale(1);} to{transform:translate3d(3%,2%,0) scale(1.08);} }
+    section, footer { position: relative; z-index: 1; }
+    .waves { position:absolute; left:0; right:0; bottom:-1px; height:120px; z-index:1; pointer-events:none;
+             -webkit-mask-image:linear-gradient(to bottom,#000 35%,transparent); mask-image:linear-gradient(to bottom,#000 35%,transparent); }
+    .waves .layer { position:absolute; inset:0; overflow:hidden; }
+    .waves svg { width:200%; height:100%; display:block; }
+    .w1 { animation: waveMove 18s linear infinite; }
+    .w2 { animation: waveMove 11s linear infinite reverse; }
+    @keyframes waveMove { from{transform:translateX(0);} to{transform:translateX(-50%);} }
+    @media (prefers-reduced-motion: reduce) { .w1,.w2,body::before { animation:none; } }
     /* ── TOP BUTTON (fixed) ────────────────────── */
     #topBtn {
       position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
@@ -477,6 +502,7 @@
       h1 { background: none !important; -webkit-text-fill-color: var(--gold-lt) !important; color: var(--gold-lt) !important; }
       section { break-inside: avoid-page; }
     }
+      @media (max-width: 1150px) { .nav-links { display: none; } }
   </style>
 </head>
 <body>
@@ -515,6 +541,10 @@
   <div class="hero-ships">
     <img src="Turtle Ship.jpg" alt="Iron-clad Turtle Ship" />
     <img src="The Golden Turtle Ship.jpg" alt="Golden Turtle Ship — Bukhyeonmu" />
+  </div>
+  <div class="waves" aria-hidden="true">
+    <div class="layer"><svg class="w2" viewBox="0 0 2880 120" preserveAspectRatio="none"><path fill="rgba(159,211,230,.07)" d="M0 60 C240 20 480 100 720 60 S1200 20 1440 60 S1920 100 2160 60 S2640 20 2880 60 V120 H0Z"/></svg></div>
+    <div class="layer"><svg class="w1" viewBox="0 0 2880 120" preserveAspectRatio="none"><path fill="rgba(159,211,230,.11)" d="M0 80 C200 50 520 110 720 80 S1240 50 1440 80 S1960 110 2160 80 S2680 50 2880 80 V120 H0Z"/></svg></div>
   </div>
 </section>
 
@@ -570,7 +600,7 @@
           <li>Awakens the Golden Turtle Ship through self-sacrifice</li>
         </ul>
         <a class="commander-link" href="yi-sun-sin.html">Who was the real Yi Sun-sin? &rarr;</a>
-        <p class="commander-quote">"살고자 하면 죽고, 죽고자 하면 산다."<br><em style="font-size:.85rem;color:var(--gray)">"Those who seek life will die; those who seek death will live."</em></p>
+        <p class="commander-quote">"살고자 하면 죽고, 죽고자 하면 산다."<br><em style="font-size:1.06rem;color:var(--gray)">"Those who seek life will die; those who seek death will live."</em></p>
       </div>
 
       <!-- DIVIDER -->
@@ -660,7 +690,7 @@
       </div>
     </div>
 
-    <h3 style="font-family:'Cinzel',serif;font-size:.8rem;letter-spacing:.2em;color:var(--gold);margin-bottom:1.2rem">6-STAGE AWAKENING SEQUENCE</h3>
+    <h3 style="font-family:'Cinzel',serif;font-size:1rem;letter-spacing:.2em;color:var(--gold);margin-bottom:1.2rem">6-STAGE AWAKENING SEQUENCE</h3>
     <div class="awakening-steps">
       <div class="step"><div class="step-num">①</div><p>Hexagonal patterns dim to life on the iron hull</p></div>
       <div class="step"><div class="step-num">②</div><p>Polaris sends a single beam of light — strikes the bow</p></div>
@@ -691,7 +721,7 @@
     <div class="awakening-trigger">
       "Awakening Condition: The moment Yi Sun-sin places the lives of his crew and people above his own —<br>
       not technology, but sacrifice, is the trigger."<br>
-      <span style="font-size:.85rem;color:var(--gray);font-style:normal">"나는 돌아오지 않을 것이다. 그러나 인류는 살 것이다."</span>
+      <span style="font-size:1.06rem;color:var(--gray);font-style:normal">"나는 돌아오지 않을 것이다. 그러나 인류는 살 것이다."</span>
     </div>
   </div>
 </section>
@@ -704,7 +734,7 @@
     <div class="section-rule"></div>
     <div class="ip-grid">
       <div>
-        <h3 style="font-family:'Cinzel',serif;font-size:.8rem;letter-spacing:.18em;color:var(--gold);margin-bottom:1.2rem">IP PROTECTION</h3>
+        <h3 style="font-family:'Cinzel',serif;font-size:1rem;letter-spacing:.18em;color:var(--gold);margin-bottom:1.2rem">IP PROTECTION</h3>
         <table class="ip-table">
           <tr><td>Korean Copyright</td><td>C-2026-010486</td></tr>
           <tr><td>WGA West v1</td><td>#2329744 · Treatment · 2026.2.5</td></tr>
@@ -715,7 +745,7 @@
         </table>
       </div>
       <div>
-        <h3 style="font-family:'Cinzel',serif;font-size:.8rem;letter-spacing:.18em;color:var(--gold);margin-bottom:1.2rem">FRANCHISE ROADMAP</h3>
+        <h3 style="font-family:'Cinzel',serif;font-size:1rem;letter-spacing:.18em;color:var(--gold);margin-bottom:1.2rem">FRANCHISE ROADMAP</h3>
         <ul class="roadmap">
           <li>
             <span class="tier">TIER 0</span>
@@ -757,7 +787,7 @@
       One from the East. One from the West.<br>
       But only together can they defeat the enemy rising from the abyss."
     </p>
-    <p style="color:var(--gray);font-size:.9rem;max-width:500px;margin:0 auto 2rem">
+    <p style="color:var(--gray);font-size:1.06rem;max-width:500px;margin:0 auto 2rem">
       Full pitch deck, screenplay, and world-bible available upon request.
     </p>
     <div class="hero-cta-group">
