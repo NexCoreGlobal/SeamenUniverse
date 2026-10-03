@@ -105,7 +105,7 @@
   .slot-desc { display:block; font-size:1.06rem; color:#e6e0cf; margin-bottom:.4rem; }
   .slot-src { display:block; font-size:0.9rem; color:var(--muted); }
   figcaption { font-size:0.98rem; color:var(--muted); margin-top:.6rem; font-style:italic; }
-  .r169 { aspect-ratio:16/9; } .r43 { aspect-ratio:4/3; } .r34 { aspect-ratio:3/4; } .r21 { aspect-ratio:21/9; }
+  .r169 { aspect-ratio:16/9; } .r1610 { aspect-ratio:16/10; } .r43 { aspect-ratio:4/3; } .r34 { aspect-ratio:3/4; } .r21 { aspect-ratio:21/9; }
 
   /* CARDS */
   .card { background:var(--navy-card); border:1px solid rgba(201,168,76,.18); padding:2rem; backdrop-filter:blur(4px); }
@@ -166,6 +166,8 @@
   .quotes .card p { font-family:'Crimson Text',serif; font-style:italic; font-size:1.15rem; color:#f3ecd8; }
   .quotes .who { font-size:0.98rem; color:var(--gold); letter-spacing:.06em; }
 
+  .legacy-gallery { grid-template-columns:1fr 2fr !important; align-items:start; }
+  @media (max-width:700px){ .legacy-gallery{ grid-template-columns:1fr !important; } }
   .gallery { display:grid; grid-template-columns:repeat(2,1fr); gap:1.4rem; margin-top:2rem; }
   @media (max-width:700px){ .gallery{ grid-template-columns:1fr; } }
 
@@ -481,14 +483,14 @@
     <div class="rule"></div>
     <p class="lead">After his death, Yi was honored as a first-rank meritorious subject, and in 1793 he was posthumously named Chief State Councillor, the highest office in the kingdom. His posthumous title, Chungmu, means "Loyal and Martial."</p>
     <p>Shrines were raised in his memory, the largest being Hyeonchungsa in Asan. His long swords, nearly two meters long, are preserved there as a designated Treasure of Korea. Today his statue stands at the heart of Seoul, on Gwanghwamun Square.</p>
-    <div class="gallery">
+    <div class="gallery legacy-gallery">
       <figure>
-        <div class="slot r169 filled"><img src="images/img-11.jpg" alt="Yi Sun-sin's long swords" loading="lazy"></div>
+        <div class="slot r34 filled painting"><img src="images/img-11.jpg" alt="Yi Sun-sin's long swords" loading="lazy"></div>
         <figcaption>Yi Sun-sin's long swords, Hyeonchungsa. Source: Encyclopedia of Korean Culture, Academy of Korean Studies</figcaption>
       </figure>
       <figure>
-        <div class="slot r169 filled"><img src="images/img-12.jpg" alt="Hyeonchungsa shrine, Asan" loading="lazy"></div>
-        <figcaption>Hyeonchungsa shrine, Asan. © Korea Tourism Organization (photo: 전형준)</figcaption>
+        <div class="slot r1610 filled"><img src="images/img-12.jpg" alt="Hyeonchungsa shrine, Asan" loading="lazy"></div>
+        <figcaption>Hyeonchungsa shrine, Asan. © Korea Tourism Organization (photo: 김지호)</figcaption>
       </figure>
     </div>
   </div>
@@ -521,7 +523,7 @@
       <li>G. A. Ballard, <i>The Influence of the Sea on the Political History of Japan</i> (London: John Murray, 1921), pp. 66–67.</li>
       <li>UNESCO Memory of the World Register: <i>Nanjung Ilgi: War Diary of Admiral Yi Sun-sin</i> (inscribed 2013).</li>
     </ul>
-    <p class="dim" style="margin-top:1rem;">Image credits: Encyclopedia of Korean Culture, Academy of Korean Studies (KOGL) — Uldolmok, portrait, turtle ship drawing, Nanjung Ilgi, long swords; © Korea Tourism Organization (KOGL Type 1) — turtle ship replica, Jeseungdang (photo: 이범수), Myeongnyang reenactment (photo: 천기철), Hyeonchungsa (photo: 전형준); Noryang scroll painting (Jeongwae Gigong Dogwon) — public domain, via Wikimedia Commons; mood and comparison images — SEAMEN UNIVERSE.</p>
+    <p class="dim" style="margin-top:1rem;">Image credits: Encyclopedia of Korean Culture, Academy of Korean Studies (KOGL) — Uldolmok, portrait, turtle ship drawing, Nanjung Ilgi, long swords; © Korea Tourism Organization (KOGL Type 1) — turtle ship replica, Jeseungdang (photo: 이범수), Myeongnyang reenactment (photo: 천기철), Hyeonchungsa (photo: 김지호); Noryang scroll painting (Jeongwae Gigong Dogwon) — public domain, via Wikimedia Commons; mood and comparison images — SEAMEN UNIVERSE.</p>
   </div>
 </section>
 
