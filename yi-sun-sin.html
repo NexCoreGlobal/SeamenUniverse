@@ -59,6 +59,7 @@
   .hero { position:relative; min-height:92vh; display:flex; align-items:flex-end; overflow:hidden; }
   .hero-media { position:absolute; inset:0; background:linear-gradient(160deg,#164e6a 0%,#0b2c44 45%,#061626 100%); background-size:cover; background-position:center; }
   .hero-media::after { content:""; position:absolute; inset:0; background:linear-gradient(to bottom, rgba(4,16,28,.15) 0%, rgba(4,16,28,.55) 55%, rgba(4,16,28,0) 100%); }
+  .hero-credit { position:absolute; bottom:1rem; right:5vw; z-index:3; font-size:.75rem; color:rgba(233,228,214,.7); }
   .hero-slot-tag { position:absolute; top:5.5rem; right:5vw; z-index:2; border:1px dashed var(--gold); color:var(--gold-lt);
                    font-size:0.9rem; padding:.6rem .9rem; max-width:320px; background:rgba(4,16,28,.6); line-height:1.5; }
   .hero-content { position:relative; z-index:2; padding:0 6vw 9rem; max-width:1000px; }
@@ -95,6 +96,9 @@
   figure { margin:0; }
   .slot { border:1px dashed rgba(201,168,76,.65); background:repeating-linear-gradient(135deg, rgba(20,80,107,.25) 0 14px, rgba(11,44,68,.25) 14px 28px);
           display:flex; align-items:center; justify-content:center; overflow:hidden; border-radius:2px; }
+  .slot.filled { border:1px solid rgba(201,168,76,.25); background:none; }
+  .slot.painting { background:#0b1520; }
+  .slot.painting img { object-fit:contain; }
   .slot img { width:100%; height:100%; object-fit:cover; display:block; }
   .slot-inner { padding:1.4rem; text-align:center; }
   .slot-id { display:block; font-family:'Cinzel',serif; font-size:1.1rem; color:var(--gold); letter-spacing:.2em; margin-bottom:.4rem; }
@@ -204,8 +208,8 @@
 <!-- ═══════════ HERO ═══════════ -->
 <header class="hero" id="top">
   <!-- IMG-01: replace with style="background-image:url('images/img-01.jpg')" -->
-  <div class="hero-media"></div>
-  <div class="hero-slot-tag"><b>IMG-01 · Hero</b><br>Wide sea at dawn or dusk — Uldolmok strait (Myeongnyang) or the southern coast. Landscape, at least 2400px wide.</div>
+  <div class="hero-media" style="background-image:url('images/img-01.jpg')"></div>
+  <div class="hero-credit">Uldolmok Strait (Myeongnyang) · Source: Encyclopedia of Korean Culture, Academy of Korean Studies</div>
   <div class="hero-content">
     <div class="kicker">The Real Admiral Behind SEAMEN STORIES</div>
     <h1>Yi Sun-sin</h1>
@@ -231,12 +235,8 @@
       <p>In 1591, a year before the war, he was promoted far above his rank to command the Left Navy of Jeolla Province, a decision that drew objections at court. He used that year to build warships, gather weapons, and secure food for his men. When the invasion came, he was ready.</p>
     </div>
     <figure>
-      <div class="slot r34"><div class="slot-inner">
-        <span class="slot-id">IMG-02</span>
-        <span class="slot-desc">Portrait of Admiral Yi Sun-sin</span>
-        <span class="slot-src">Suggested: "이순신" image, Encyclopedia of Korean Culture (KOGL Type 1). Do not use the 1953 standard portrait — not free to use.</span>
-      </div></div>
-      <figcaption>Admiral Yi Sun-sin (1545–1598). [Credit line here]</figcaption>
+      <div class="slot r34 filled"><img src="images/img-02.jpg" alt="Portrait of Admiral Yi Sun-sin" loading="lazy"></div>
+      <figcaption>Admiral Yi Sun-sin (1545–1598). Source: Encyclopedia of Korean Culture, Academy of Korean Studies</figcaption>
     </figure>
   </div>
 </section>
@@ -268,20 +268,12 @@
     <div class="two rev" style="margin-top:5rem;">
       <div class="gallery" style="margin-top:0;grid-template-columns:1fr;">
         <figure>
-          <div class="slot r169"><div class="slot-inner">
-            <span class="slot-id">IMG-03</span>
-            <span class="slot-desc">Modern full-scale replica of the turtle ship (geobukseon)</span>
-            <span class="slot-src">Suggested: your own photo, or a KOGL Type 1 public-agency image</span>
-          </div></div>
-          <figcaption>A modern reconstruction of the turtle ship. [Credit line here]</figcaption>
+          <div class="slot r169 filled"><img src="images/img-03.jpg" alt="Modern replica of the turtle ship" loading="lazy"></div>
+          <figcaption>A modern reconstruction of the turtle ship. © Korea Tourism Organization</figcaption>
         </figure>
         <figure>
-          <div class="slot r43"><div class="slot-inner">
-            <span class="slot-id">IMG-04</span>
-            <span class="slot-desc">Turtle ship drawing from the Complete Works of Admiral Yi (이충무공전서, 1795)</span>
-            <span class="slot-src">18th-century document — check the source library's terms</span>
-          </div></div>
-          <figcaption>Turtle ship illustration from the Complete Works of Admiral Yi, 1795.</figcaption>
+          <div class="slot r43 filled"><img src="images/img-04.jpg" alt="Historical drawing of the turtle ship" loading="lazy"></div>
+          <figcaption>Turtle ship illustration from the Complete Works of Admiral Yi, 1795. Source: Encyclopedia of Korean Culture, Academy of Korean Studies</figcaption>
         </figure>
       </div>
       <div>
@@ -354,12 +346,8 @@
       <div class="fact"><b>1</b><span>Formation that changed the war</span></div>
     </div>
     <figure>
-      <div class="slot r21"><div class="slot-inner">
-        <span class="slot-id">IMG-05</span>
-        <span class="slot-desc">The sea off Hansan Island today, or the Jeseungdang command post on Hansan Island</span>
-        <span class="slot-src">Suggested: your own photo or a KOGL Type 1 image (Tongyeong city / heritage agency)</span>
-      </div></div>
-      <figcaption>The waters off Hansan Island, Tongyeong. [Credit line here]</figcaption>
+      <div class="slot r21 filled"><img src="images/img-05.jpg" alt="Jeseungdang command post, Hansan Island" loading="lazy"></div>
+      <figcaption>Jeseungdang, Yi Sun-sin's command post on Hansan Island, Tongyeong. © Korea Tourism Organization (photo: 이범수)</figcaption>
     </figure>
   </div>
 </section>
@@ -374,11 +362,7 @@
     <p>Rivals at court seized the moment. Yi was arrested, taken to the capital and interrogated for about a month. He accused no one. Spared from execution, he was sent to serve once more as a common soldier. On the road south, he received news that his mother had died.</p>
     <p>Months later, at Chilcheollyang, the fleet he had built was destroyed under his successor, Won Gyun. A navy that had numbered over 130 warships and some 13,000 men was all but wiped out. The court had no one else to turn to.</p>
     <figure style="max-width:900px;margin:2.5rem auto 0;">
-      <div class="slot r21"><div class="slot-inner">
-        <span class="slot-id">IMG-06</span>
-        <span class="slot-desc">Dark, stormy sea — mood image for the fall and the lost fleet</span>
-        <span class="slot-src">Suggested: stock photo with commercial license, or your own photo</span>
-      </div></div>
+      <div class="slot r21 filled"><img src="images/img-06.jpg" alt="Dark stormy sea" loading="lazy"></div>
     </figure>
   </div>
 </section>
@@ -407,12 +391,8 @@
         <p class="dim">Records differ slightly: some sources give twelve ships for the battle itself. The commonly accepted account is twelve ships at his reappointment and thirteen at Myeongnyang.</p>
       </div>
       <figure>
-        <div class="slot r43"><div class="slot-inner">
-          <span class="slot-id">IMG-07</span>
-          <span class="slot-desc">The fast tidal currents of the Uldolmok (Myeongnyang Strait), Haenam–Jindo</span>
-          <span class="slot-src">Suggested: your own photo or a KOGL Type 1 image (Haenam / Jindo county)</span>
-        </div></div>
-        <figcaption>Uldolmok, where the battle was fought. [Credit line here]</figcaption>
+        <div class="slot r43 filled"><img src="images/img-07.jpg" alt="Reenactment of the Battle of Myeongnyang" loading="lazy"></div>
+        <figcaption>A reenactment of the Battle of Myeongnyang at Uldolmok. © Korea Tourism Organization (photo: 천기철)</figcaption>
       </figure>
     </div>
     <div class="card" style="margin-top:3rem;">
@@ -435,12 +415,8 @@
         <p>Those beside him hid his body and kept the drums beating. His men fought on without knowing he had fallen, and the withdrawing fleet was heavily defeated. When the truth came out, it was said that <em>the dead Yi Sun-sin had driven off the living enemy.</em></p>
       </div>
       <figure>
-        <div class="slot r34"><div class="slot-inner">
-          <span class="slot-id">IMG-08</span>
-          <span class="slot-desc">The Noryang sea, or the Irak-sa shrine at Gwaneumpo, Namhae — where Yi fell</span>
-          <span class="slot-src">Suggested: your own photo or a KOGL Type 1 image (Namhae county)</span>
-        </div></div>
-        <figcaption>Gwaneumpo, Namhae. [Credit line here]</figcaption>
+        <div class="slot r43 filled painting"><img src="images/img-08.jpg" alt="The Battle of Noryang, from a scroll painted by a Ming Chinese war artist" loading="lazy"></div>
+        <figcaption>The Battle of Noryang, from the <i>Jeongwae Gigong Dogwon</i> (征倭紀功圖卷), a scroll by a Ming Chinese war artist who accompanied the allied forces. The original's whereabouts are unknown; its photographs were made public by Prof. Gari K. Ledyard of Columbia University. Public domain, via Wikimedia Commons.</figcaption>
       </figure>
     </div>
     <p class="dim" style="margin-top:2rem;">The battle ran through the night; Korean sources date it to the 18th or 19th day of the 11th lunar month of 1598.</p>
@@ -469,11 +445,7 @@
     </div>
     <div class="gallery">
       <figure>
-        <div class="slot r43"><div class="slot-inner">
-          <span class="slot-id">IMG-09</span>
-          <span class="slot-desc">Yi Sun-sin and Horatio Nelson side by side — East and West</span>
-          <span class="slot-src">Can reuse "Yi Sun-sin.jpg" and "nelson.png" from the main site (check the Yi image source)</span>
-        </div></div>
+        <div class="slot r43 filled"><img src="images/img-09.jpg" alt="Admiral Yi Sun-sin and Admiral Horatio Nelson" loading="lazy"></div>
         <figcaption>Two admirals, compared by a British admiral a century ago.</figcaption>
       </figure>
       <div class="card" style="display:flex;flex-direction:column;justify-content:center;">
@@ -488,12 +460,8 @@
 <section id="writer">
   <div class="wrap two rev">
     <figure>
-      <div class="slot r43"><div class="slot-inner">
-        <span class="slot-id">IMG-10</span>
-        <span class="slot-desc">Pages of the Nanjung Ilgi (War Diary) or the Imjin Janggcho (war reports)</span>
-        <span class="slot-src">Check the license: the encyclopedia marks the Imjin Janggcho image "KOGL Type 0" — confirm before use</span>
-      </div></div>
-      <figcaption>Nanjung Ilgi, National Treasure of Korea. [Credit line here]</figcaption>
+      <div class="slot r43 filled"><img src="images/img-10.jpg" alt="Nanjung Ilgi, Yi Sun-sin's war diary" loading="lazy"></div>
+      <figcaption>Nanjung Ilgi, National Treasure of Korea. Source: Encyclopedia of Korean Culture, Academy of Korean Studies</figcaption>
     </figure>
     <div>
       <div class="label">The Writer</div>
@@ -515,20 +483,12 @@
     <p>Shrines were raised in his memory, the largest being Hyeonchungsa in Asan. His long swords, nearly two meters long, are preserved there as a designated Treasure of Korea. Today his statue stands at the heart of Seoul, on Gwanghwamun Square.</p>
     <div class="gallery">
       <figure>
-        <div class="slot r169"><div class="slot-inner">
-          <span class="slot-id">IMG-11</span>
-          <span class="slot-desc">Yi Sun-sin's long swords (Treasure of Korea)</span>
-          <span class="slot-src">Available: "이순신 유물 일괄 중 장검", Encyclopedia of Korean Culture — KOGL Type 1</span>
-        </div></div>
-        <figcaption>Yi Sun-sin's long swords, Hyeonchungsa. Source: Encyclopedia of Korean Culture.</figcaption>
+        <div class="slot r169 filled"><img src="images/img-11.jpg" alt="Yi Sun-sin's long swords" loading="lazy"></div>
+        <figcaption>Yi Sun-sin's long swords, Hyeonchungsa. Source: Encyclopedia of Korean Culture, Academy of Korean Studies</figcaption>
       </figure>
       <figure>
-        <div class="slot r169"><div class="slot-inner">
-          <span class="slot-id">IMG-12</span>
-          <span class="slot-desc">Hyeonchungsa shrine, Asan — or the statue of Admiral Yi</span>
-          <span class="slot-src">Available: "아산 이충무공 유허 현충사" or "이순신 장군 동상", Encyclopedia of Korean Culture — KOGL Type 1</span>
-        </div></div>
-        <figcaption>Hyeonchungsa shrine, Asan. Source: Encyclopedia of Korean Culture.</figcaption>
+        <div class="slot r169 filled"><img src="images/img-12.jpg" alt="Hyeonchungsa shrine, Asan" loading="lazy"></div>
+        <figcaption>Hyeonchungsa shrine, Asan. © Korea Tourism Organization (photo: 전형준)</figcaption>
       </figure>
     </div>
   </div>
@@ -561,7 +521,7 @@
       <li>G. A. Ballard, <i>The Influence of the Sea on the Political History of Japan</i> (London: John Murray, 1921), pp. 66–67.</li>
       <li>UNESCO Memory of the World Register: <i>Nanjung Ilgi: War Diary of Admiral Yi Sun-sin</i> (inscribed 2013).</li>
     </ul>
-    <p class="dim" style="margin-top:1rem;">Image credits: [add credit lines for each image used].</p>
+    <p class="dim" style="margin-top:1rem;">Image credits: Encyclopedia of Korean Culture, Academy of Korean Studies (KOGL) — Uldolmok, portrait, turtle ship drawing, Nanjung Ilgi, long swords; © Korea Tourism Organization (KOGL Type 1) — turtle ship replica, Jeseungdang (photo: 이범수), Myeongnyang reenactment (photo: 천기철), Hyeonchungsa (photo: 전형준); Noryang scroll painting (Jeongwae Gigong Dogwon) — public domain, via Wikimedia Commons; mood and comparison images — SEAMEN UNIVERSE.</p>
   </div>
 </section>
 
