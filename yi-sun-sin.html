@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admiral Yi Sun-sin — SEAMEN UNIVERSE</title>
+<meta name="description" content="Who was Admiral Yi Sun-sin (1545–1598)? The real Korean admiral behind SEAMEN STORIES — Hansan, Myeongnyang, Noryang and the turtle ship." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+<!--
+  HOW TO ADD IMAGES
+  Every image position is marked with a dashed box labelled IMG-01, IMG-02 ...
+  To replace one, swap the whole <div class="slot-inner">...</div> for:
+      <img src="images/img-01.jpg" alt="short description">
+  For the hero (IMG-01), add the image as a background instead:
+      <div class="hero-media" style="background-image:url('images/img-01.jpg')">
+  Keep the <figcaption> lines; they hold captions and credits.
+-->
+<style>
+  :root {
+    --navy:#07111f; --navy-mid:#0d1e33; --navy-card:rgba(15,35,64,.72);
+    --deep:#04101c; --sea:#0b2c44; --sea-lt:#14506b; --foam:#9fd3e6;
+    --gold:#c9a84c; --gold-lt:#e8d08a; --gold-dim:#7a6228;
+    --red:#b5523b; --text:#e9e4d6; --muted:#a9b6c2;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html { scroll-behavior:smooth; background:#061a2b; }
+  body {
+    font-family:'Inter',sans-serif; font-weight:300; line-height:1.75; color:var(--text);
+    background:
+      radial-gradient(1200px 600px at 20% -10%, rgba(80,170,200,.18), transparent 60%),
+      radial-gradient(900px 500px at 90% 10%, rgba(201,168,76,.08), transparent 60%),
+      linear-gradient(180deg, #0d3550 0%, #0a2840 18%, #071c30 45%, #05121f 75%, #030b14 100%);
+    background-attachment:fixed; min-height:100vh; overflow-x:hidden;
+  }
+  /* drifting light on the water */
+  body::before {
+    content:""; position:fixed; inset:-20%; pointer-events:none; z-index:0; opacity:.35;
+    background:
+      radial-gradient(closest-side at 30% 40%, rgba(159,211,230,.10), transparent),
+      radial-gradient(closest-side at 70% 60%, rgba(159,211,230,.07), transparent),
+      radial-gradient(closest-side at 50% 80%, rgba(201,168,76,.05), transparent);
+    animation:drift 26s ease-in-out infinite alternate;
+  }
+  @keyframes drift { from{transform:translate3d(-3%,-2%,0) scale(1);} to{transform:translate3d(3%,2%,0) scale(1.08);} }
+  main, nav, footer { position:relative; z-index:1; }
+
+  /* NAV */
+  nav { position:sticky; top:0; z-index:10; display:flex; justify-content:space-between; align-items:center;
+        padding:1rem 5vw; background:rgba(5,16,28,.78); backdrop-filter:blur(8px); border-bottom:1px solid rgba(201,168,76,.18); }
+  .brand { font-family:'Cinzel',serif; font-size:.8rem; letter-spacing:.3em; color:var(--gold); text-decoration:none; }
+  .nav-links { display:flex; gap:1.6rem; list-style:none; flex-wrap:wrap; }
+  .nav-links a { color:var(--muted); text-decoration:none; font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; }
+  .nav-links a:hover { color:var(--gold); }
+  @media (max-width:820px){ .nav-links{ display:none; } }
+
+  /* HERO */
+  .hero { position:relative; min-height:92vh; display:flex; align-items:flex-end; overflow:hidden; }
+  .hero-media { position:absolute; inset:0; background:linear-gradient(160deg,#164e6a 0%,#0b2c44 45%,#061626 100%); background-size:cover; background-position:center; }
+  .hero-media::after { content:""; position:absolute; inset:0; background:linear-gradient(to bottom, rgba(4,16,28,.15) 0%, rgba(4,16,28,.55) 55%, rgba(4,16,28,0) 100%); }
+  .hero-slot-tag { position:absolute; top:5.5rem; right:5vw; z-index:2; border:1px dashed var(--gold); color:var(--gold-lt);
+                   font-size:.72rem; padding:.6rem .9rem; max-width:320px; background:rgba(4,16,28,.6); line-height:1.5; }
+  .hero-content { position:relative; z-index:2; padding:0 6vw 9rem; max-width:1000px; }
+  .kicker { font-family:'Cinzel',serif; font-size:.7rem; letter-spacing:.32em; color:var(--gold); text-transform:uppercase; margin-bottom:1.2rem; }
+  h1 { font-family:'Cinzel',serif; font-weight:900; font-size:clamp(3.2rem,9vw,7.5rem); line-height:1; letter-spacing:.04em;
+       background:linear-gradient(160deg,#fff 30%,var(--gold-lt) 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .hero-sub { font-family:'Cinzel',serif; color:var(--gold-lt); letter-spacing:.2em; font-size:.85rem; margin:1rem 0 1.6rem; }
+  .hero-line { font-family:'Crimson Text',serif; font-style:italic; font-size:clamp(1.2rem,2.6vw,1.7rem); color:#f3ecd8; max-width:700px; }
+
+  /* animated waves */
+  .waves { position:absolute; left:0; right:0; bottom:-1px; height:120px; z-index:1; -webkit-mask-image:linear-gradient(to bottom,#000 35%,transparent); mask-image:linear-gradient(to bottom,#000 35%,transparent); }
+  .waves svg { width:200%; height:100%; display:block; }
+  .w1 { animation:waveMove 18s linear infinite; }
+  .w2 { animation:waveMove 11s linear infinite reverse; opacity:.7; }
+  @keyframes waveMove { from{transform:translateX(0);} to{transform:translateX(-50%);} }
+  .waves .layer { position:absolute; inset:0; overflow:hidden; }
+  @media (prefers-reduced-motion:reduce){ .w1,.w2,body::before{ animation:none; } }
+
+  /* SECTIONS */
+  section { padding:6.5rem 6vw; position:relative; }
+  .wrap { max-width:1100px; margin:0 auto; }
+  .label { font-family:'Cinzel',serif; font-size:.66rem; letter-spacing:.32em; color:var(--gold); text-transform:uppercase; margin-bottom:.8rem; }
+  h2 { font-family:'Cinzel',serif; font-weight:700; font-size:clamp(1.9rem,4.2vw,3rem); line-height:1.15; color:#f6f0de; margin-bottom:1.4rem; }
+  h3 { font-family:'Cinzel',serif; font-weight:600; font-size:1.25rem; color:var(--gold-lt); margin-bottom:.7rem; }
+  p { margin-bottom:1.1rem; max-width:68ch; }
+  .lead { font-size:1.12rem; color:#f1ead8; }
+  .rule { width:70px; height:1px; background:linear-gradient(to right,var(--gold),transparent); margin:1.4rem 0 2rem; }
+  .two { display:grid; grid-template-columns:1.15fr .85fr; gap:3.5rem; align-items:start; }
+  .two.rev { grid-template-columns:.85fr 1.15fr; }
+  @media (max-width:900px){ .two,.two.rev{ grid-template-columns:1fr; gap:2rem; } }
+  .dim { color:var(--muted); font-size:.85rem; }
+
+  /* IMAGE SLOTS */
+  figure { margin:0; }
+  .slot { border:1px dashed rgba(201,168,76,.65); background:repeating-linear-gradient(135deg, rgba(20,80,107,.25) 0 14px, rgba(11,44,68,.25) 14px 28px);
+          display:flex; align-items:center; justify-content:center; overflow:hidden; border-radius:2px; }
+  .slot img { width:100%; height:100%; object-fit:cover; display:block; }
+  .slot-inner { padding:1.4rem; text-align:center; }
+  .slot-id { display:block; font-family:'Cinzel',serif; font-size:1.1rem; color:var(--gold); letter-spacing:.2em; margin-bottom:.4rem; }
+  .slot-desc { display:block; font-size:.88rem; color:#e6e0cf; margin-bottom:.4rem; }
+  .slot-src { display:block; font-size:.72rem; color:var(--muted); }
+  figcaption { font-size:.78rem; color:var(--muted); margin-top:.6rem; font-style:italic; }
+  .r169 { aspect-ratio:16/9; } .r43 { aspect-ratio:4/3; } .r34 { aspect-ratio:3/4; } .r21 { aspect-ratio:21/9; }
+
+  /* CARDS */
+  .card { background:var(--navy-card); border:1px solid rgba(201,168,76,.18); padding:2rem; backdrop-filter:blur(4px); }
+
+  /* TIMELINE */
+  .timeline-scroll { overflow-x:auto; padding:1rem 0 1.5rem; margin-top:2.5rem; -webkit-overflow-scrolling:touch; }
+  .timeline { position:relative; display:grid; grid-template-columns:repeat(9, minmax(112px,1fr)); min-width:1040px; padding-top:3.2rem; }
+  .timeline::before { content:""; position:absolute; top:3.2rem; left:0; right:0; height:2px; background:linear-gradient(to right, rgba(201,168,76,.15), var(--gold), rgba(201,168,76,.15)); }
+  .tl { position:relative; padding:1.6rem .6rem 0; text-align:center; }
+  .tl::before { content:""; position:absolute; top:-7px; left:50%; transform:translateX(-50%); width:14px; height:14px; border-radius:50%;
+                background:var(--sea); border:2px solid var(--gold); }
+  .tl .yr { position:absolute; top:-3rem; left:0; right:0; font-family:'Cinzel',serif; font-size:.78rem; color:var(--gold); letter-spacing:.12em; }
+  .tl .nm { font-family:'Cinzel',serif; font-size:.92rem; color:#f3ecd8; line-height:1.25; margin-bottom:.35rem; }
+  .tl .nt { font-size:.75rem; color:var(--muted); line-height:1.45; }
+  .tl.star::before { width:24px; height:24px; top:-12px; background:var(--gold); box-shadow:0 0 0 6px rgba(201,168,76,.18), 0 0 24px rgba(232,208,138,.6); }
+  .tl.star .nm { color:var(--gold-lt); font-weight:700; font-size:1.02rem; }
+  .tl.loss::before { border-color:var(--red); background:#2a0f0a; }
+  .tl.loss .nm { color:#e2a08f; }
+  .tl a { color:inherit; text-decoration:none; }
+  .tl-note { font-size:.75rem; color:var(--muted); margin-top:.4rem; }
+  .legend { display:flex; gap:1.6rem; flex-wrap:wrap; font-size:.75rem; color:var(--muted); margin-top:.6rem; }
+  .legend span::before { content:""; display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:.45rem; vertical-align:-1px; border:2px solid var(--gold); }
+  .legend .lg-star::before { background:var(--gold); }
+  .legend .lg-loss::before { border-color:var(--red); background:#2a0f0a; }
+
+  /* FEATURED BATTLES */
+  .battle { padding-top:7rem; padding-bottom:7rem; }
+  .battle-head { display:flex; align-items:baseline; gap:1.2rem; flex-wrap:wrap; }
+  .battle-num { font-family:'Cinzel',serif; font-size:clamp(3.5rem,9vw,6.5rem); font-weight:900; line-height:1; color:transparent;
+                -webkit-text-stroke:1px rgba(201,168,76,.55); }
+  .facts { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(201,168,76,.2); margin:2rem 0; border:1px solid rgba(201,168,76,.2); }
+  .fact { background:rgba(5,18,31,.85); padding:1.2rem 1rem; text-align:center; }
+  .fact b { display:block; font-family:'Cinzel',serif; font-size:1.7rem; color:var(--gold-lt); line-height:1.2; }
+  .fact span { font-size:.72rem; letter-spacing:.08em; color:var(--muted); text-transform:uppercase; }
+  @media (max-width:600px){ .facts{ grid-template-columns:1fr; } }
+  blockquote { font-family:'Crimson Text',serif; font-style:italic; font-size:clamp(1.25rem,2.4vw,1.6rem); line-height:1.5; color:#f6efd9;
+               border-left:2px solid var(--gold); padding:.4rem 0 .4rem 1.4rem; margin:2rem 0; max-width:60ch; }
+  blockquote cite { display:block; font-family:'Inter',sans-serif; font-style:normal; font-size:.78rem; color:var(--muted); margin-top:.7rem; letter-spacing:.04em; }
+  .diagram { background:rgba(4,16,28,.6); border:1px solid rgba(201,168,76,.2); padding:1rem; }
+  .diagram svg { width:100%; height:auto; display:block; }
+
+  /* 13 vs 133 */
+  .odds { display:grid; grid-template-columns:auto 1fr; gap:1.4rem 2rem; align-items:center; margin:2rem 0; }
+  .odds .who { font-family:'Cinzel',serif; font-size:.8rem; letter-spacing:.14em; color:var(--muted); text-align:right; }
+  .odds .who b { display:block; font-size:2rem; color:var(--gold-lt); }
+  .odds .who.jp b { color:#e2a08f; }
+  .dots { display:flex; flex-wrap:wrap; gap:5px; }
+  .dots i { width:11px; height:11px; border-radius:50%; display:block; }
+  .dots.k i { background:var(--gold); box-shadow:0 0 8px rgba(232,208,138,.6); width:16px; height:16px; }
+  .dots.j i { background:rgba(181,82,59,.75); }
+  @media (max-width:600px){ .odds{ grid-template-columns:1fr; } .odds .who{ text-align:left; } }
+
+  .interlude { text-align:center; }
+  .interlude p { margin-left:auto; margin-right:auto; }
+
+  .quotes { display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; margin-top:2.5rem; }
+  @media (max-width:900px){ .quotes{ grid-template-columns:1fr; } }
+  .quotes .card p { font-family:'Crimson Text',serif; font-style:italic; font-size:1.15rem; color:#f3ecd8; }
+  .quotes .who { font-size:.78rem; color:var(--gold); letter-spacing:.06em; }
+
+  .gallery { display:grid; grid-template-columns:repeat(2,1fr); gap:1.4rem; margin-top:2rem; }
+  @media (max-width:700px){ .gallery{ grid-template-columns:1fr; } }
+
+  /* BRIDGE */
+  .bridge { text-align:center; padding:8rem 6vw; background:linear-gradient(180deg, transparent, rgba(201,168,76,.06) 50%, transparent); }
+  .bridge p { margin-left:auto; margin-right:auto; }
+  .bridge-imgs { display:grid; grid-template-columns:1fr 60px 1fr; gap:1rem; align-items:center; max-width:820px; margin:2.5rem auto; }
+  .bridge-imgs img { width:100%; aspect-ratio:16/9; object-fit:cover; border:1px solid rgba(201,168,76,.3); }
+  .bridge-imgs .arrow { font-family:'Cinzel',serif; color:var(--gold); font-size:1.6rem; }
+  .btns { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-top:1.5rem; }
+  .btn { font-family:'Cinzel',serif; font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; text-decoration:none;
+         padding:.95rem 1.8rem; border:1px solid var(--gold); color:var(--gold); transition:.25s; }
+  .btn:hover { background:var(--gold); color:var(--navy); }
+  .btn.solid { background:var(--gold); color:var(--navy); }
+
+  .sources { font-size:.8rem; color:var(--muted); }
+  .sources li { margin:0 0 .5rem 1.1rem; }
+  .sources a { color:var(--gold-lt); }
+  footer { text-align:center; padding:3rem 6vw 4rem; font-size:.75rem; color:var(--muted); border-top:1px solid rgba(201,168,76,.15); }
+  footer a { color:var(--gold); text-decoration:none; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="index.html">SEAMEN UNIVERSE</a>
+  <ul class="nav-links">
+    <li><a href="#who">The Man</a></li>
+    <li><a href="#war">The War</a></li>
+    <li><a href="#hansan">Hansan</a></li>
+    <li><a href="#myeongnyang">Myeongnyang</a></li>
+    <li><a href="#noryang">Noryang</a></li>
+    <li><a href="#legacy">Legacy</a></li>
+    <li><a href="index.html">SEAMEN Stories</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<!-- ═══════════ HERO ═══════════ -->
+<header class="hero" id="top">
+  <!-- IMG-01: replace with style="background-image:url('images/img-01.jpg')" -->
+  <div class="hero-media"></div>
+  <div class="hero-slot-tag"><b>IMG-01 · Hero</b><br>Wide sea at dawn or dusk — Uldolmok strait (Myeongnyang) or the southern coast. Landscape, at least 2400px wide.</div>
+  <div class="hero-content">
+    <div class="kicker">The Real Admiral Behind SEAMEN STORIES</div>
+    <h1>Yi Sun-sin</h1>
+    <div class="hero-sub">1545 – 1598 · ADMIRAL OF JOSEON KOREA</div>
+    <p class="hero-line">When the land had fallen, he held the sea.</p>
+  </div>
+  <div class="waves" aria-hidden="true">
+    <div class="layer"><svg class="w2" viewBox="0 0 2880 120" preserveAspectRatio="none"><path fill="rgba(159,211,230,.07)" d="M0 60 C240 20 480 100 720 60 S1200 20 1440 60 S1920 100 2160 60 S2640 20 2880 60 V120 H0Z"/></svg></div>
+    <div class="layer"><svg class="w1" viewBox="0 0 2880 120" preserveAspectRatio="none"><path fill="rgba(159,211,230,.11)" d="M0 80 C200 50 520 110 720 80 S1240 50 1440 80 S1960 110 2160 80 S2680 50 2880 80 V120 H0Z"/></svg></div>
+  </div>
+</header>
+
+<!-- ═══════════ WHO ═══════════ -->
+<section id="who">
+  <div class="wrap two">
+    <div>
+      <div class="label">Who Was He?</div>
+      <h2>A Commander Made by Hardship</h2>
+      <div class="rule"></div>
+      <p class="lead">Yi Sun-sin was born in 1545 in Hanseong, today's Seoul, into a family whose fortunes had fallen after his grandfather was caught up in a political purge.</p>
+      <p>His path into the army was not easy. At 28 he sat the military examination, but his horse stumbled and he was thrown, injuring his leg and failing the test. He kept training and passed four years later, in 1576.</p>
+      <p>On the northern frontier he asked for more troops to defend his post. The request was refused, and when raiders struck, he was blamed. Rather than accept an unjust verdict, he argued his case to the end. He escaped execution, but was stripped of rank and made to serve as a common soldier — the first of two times this would happen to him.</p>
+      <p>In 1591, a year before the war, he was promoted far above his rank to command the Left Navy of Jeolla Province, a decision that drew objections at court. He used that year to build warships, gather weapons, and secure food for his men. When the invasion came, he was ready.</p>
+    </div>
+    <figure>
+      <div class="slot r34"><div class="slot-inner">
+        <span class="slot-id">IMG-02</span>
+        <span class="slot-desc">Portrait of Admiral Yi Sun-sin</span>
+        <span class="slot-src">Suggested: "이순신" image, Encyclopedia of Korean Culture (KOGL Type 1). Do not use the 1953 standard portrait — not free to use.</span>
+      </div></div>
+      <figcaption>Admiral Yi Sun-sin (1545–1598). [Credit line here]</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════════ THE WAR / TIMELINE ═══════════ -->
+<section id="war">
+  <div class="wrap">
+    <div class="label">The Imjin War · 1592–1598</div>
+    <h2>Seven Years at Sea, at a Glance</h2>
+    <div class="rule"></div>
+    <p class="lead">On the 13th day of the 4th month of 1592, Japanese forces landed at Busan. The navies of Gyeongsang Province collapsed almost at once. The Japanese planned to sail around the peninsula and supply their armies by sea. Yi Sun-sin's fleet stood in the way.</p>
+
+    <div class="timeline-scroll" role="region" aria-label="Timeline of naval battles">
+      <div class="timeline">
+        <div class="tl"><div class="yr">1592 · 5.7</div><div class="nm">Okpo</div><div class="nt">First battle, first victory</div></div>
+        <div class="tl"><div class="yr">1592 · 5.29</div><div class="nm">Sacheon</div><div class="nt">Turtle ship's first battle; Yi shot in the shoulder</div></div>
+        <div class="tl"><div class="yr">1592 · 6</div><div class="nm">Dangpo &amp; Danghangpo</div><div class="nt">Enemy fleets destroyed in harbor</div></div>
+        <div class="tl star"><div class="yr">1592 · 7</div><a href="#hansan"><div class="nm">Hansan Island</div><div class="nt">The Crane Wing</div></a></div>
+        <div class="tl"><div class="yr">1592 · 9.1</div><div class="nm">Busan</div><div class="nt">Strike on the enemy's main base</div></div>
+        <div class="tl"><div class="yr">1593 – 1596</div><div class="nm">Ungpo · Jangmunpo</div><div class="nt">Years of stalemate during peace talks</div></div>
+        <div class="tl loss"><div class="yr">1597 · 7</div><div class="nm">Chilcheollyang</div><div class="nt">Fleet destroyed under Won Gyun — Yi was not in command</div></div>
+        <div class="tl star"><div class="yr">1597 · 9.16</div><a href="#myeongnyang"><div class="nm">Myeongnyang</div><div class="nt">13 ships against 133</div></a></div>
+        <div class="tl star"><div class="yr">1598 · 11</div><a href="#noryang"><div class="nm">Noryang</div><div class="nt">The final battle</div></a></div>
+      </div>
+    </div>
+    <div class="legend"><span class="lg-star">Featured below</span><span>Other engagements</span><span class="lg-loss">Defeat (Yi absent)</span></div>
+    <p class="tl-note">Dates follow the lunar calendar used in Joseon records.</p>
+
+    <div class="two rev" style="margin-top:5rem;">
+      <div class="gallery" style="margin-top:0;grid-template-columns:1fr;">
+        <figure>
+          <div class="slot r169"><div class="slot-inner">
+            <span class="slot-id">IMG-03</span>
+            <span class="slot-desc">Modern full-scale replica of the turtle ship (geobukseon)</span>
+            <span class="slot-src">Suggested: your own photo, or a KOGL Type 1 public-agency image</span>
+          </div></div>
+          <figcaption>A modern reconstruction of the turtle ship. [Credit line here]</figcaption>
+        </figure>
+        <figure>
+          <div class="slot r43"><div class="slot-inner">
+            <span class="slot-id">IMG-04</span>
+            <span class="slot-desc">Turtle ship drawing from the Complete Works of Admiral Yi (이충무공전서, 1795)</span>
+            <span class="slot-src">18th-century document — check the source library's terms</span>
+          </div></div>
+          <figcaption>Turtle ship illustration from the Complete Works of Admiral Yi, 1795.</figcaption>
+        </figure>
+      </div>
+      <div>
+        <div class="label">The Turtle Ship</div>
+        <h3>A Roof of Spikes, a Dragon at the Bow</h3>
+        <p>The turtle ship was a warship with its deck covered by a roof, studded with spikes to stop boarders, and a dragon's head at the bow. It led the charge at Sacheon in 1592, its first battle, and went on to break open enemy formations at Dangpo, Danghangpo and Hansan.</p>
+        <p>It is often called the world's first ironclad. Historians still debate this: Korean records from the war do not describe iron plating, while some scholars argue thin metal plates were added. What is not in doubt is the role it played.</p>
+        <p class="dim">In SEAMEN STORIES, this ship returns in 2047 as the Golden Turtle Ship.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ I. HANSAN ═══════════ -->
+<section id="hansan" class="battle">
+  <div class="wrap">
+    <div class="battle-head"><span class="battle-num">I</span><div><div class="label">Summer 1592</div><h2 style="margin:0">Hansan Island</h2></div></div>
+    <div class="rule"></div>
+    <div class="two">
+      <div>
+        <p class="lead">A Japanese fleet of about seventy ships under Wakisaka Yasuharu was anchored in Gyeonnaeryang, a narrow strait. Yi judged the waters too tight for his large warships and too close to land, where the enemy could escape ashore.</p>
+        <p>So he sent a few ships forward as bait. The Japanese gave chase into the open sea off Hansan Island — and found the Joseon fleet waiting, spread out in a wide arc like a crane opening its wings. The arc closed around them, and the cannon opened fire.</p>
+        <p>Of the enemy fleet, 59 ships were destroyed. The victory broke Japan's plan to move its armies and supplies along the western sea.</p>
+      </div>
+      <figure class="diagram">
+        <svg viewBox="0 0 520 360" role="img" aria-label="Diagram of the crane wing formation at Hansan">
+          <defs>
+            <radialGradient id="wg" cx="50%" cy="40%" r="70%"><stop offset="0" stop-color="#14506b"/><stop offset="1" stop-color="#061626"/></radialGradient>
+            <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#c9a84c"/></marker>
+            <marker id="arR" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#e2a08f"/></marker>
+          </defs>
+          <rect width="520" height="360" fill="url(#wg)"/>
+          <!-- strait -->
+          <path d="M440 0 L470 0 L500 120 L470 120 Z" fill="#2a3a2a" opacity=".55"/>
+          <path d="M500 0 L520 0 L520 140 L505 130 Z" fill="#2a3a2a" opacity=".55"/>
+          <text x="462" y="150" fill="#a9b6c2" font-size="11" font-family="Inter" text-anchor="middle">Gyeonnaeryang</text>
+          <!-- Hansan island -->
+          <ellipse cx="90" cy="300" rx="70" ry="34" fill="#2a3a2a" opacity=".7"/>
+          <text x="90" y="304" fill="#e9e4d6" font-size="12" font-family="Cinzel" text-anchor="middle">Hansan Island</text>
+          <!-- Japanese fleet -->
+          <g fill="#b5523b">
+            <polygon points="300,150 312,144 312,156"/><polygon points="318,140 330,134 330,146"/><polygon points="318,162 330,156 330,168"/>
+            <polygon points="336,130 348,124 348,136"/><polygon points="336,152 348,146 348,158"/><polygon points="336,174 348,168 348,180"/>
+            <polygon points="354,142 366,136 366,148"/><polygon points="354,164 366,158 366,170"/><polygon points="372,152 384,146 384,158"/>
+          </g>
+          <text x="345" y="205" fill="#e2a08f" font-size="12" font-family="Inter" text-anchor="middle">Japanese fleet (~70)</text>
+          <path d="M395 140 Q420 100 455 110" stroke="#e2a08f" stroke-dasharray="4 4" fill="none" marker-start="url(#arR)"/>
+          <!-- decoys -->
+          <g fill="#e8d08a"><circle cx="255" cy="152" r="5"/><circle cx="240" cy="160" r="5"/></g>
+          <path d="M290 152 L262 152" stroke="#c9a84c" stroke-width="1.5" marker-end="url(#ar)"/>
+          <text x="248" y="135" fill="#e8d08a" font-size="11" font-family="Inter" text-anchor="middle">Decoy ships</text>
+          <!-- crane wing arc -->
+          <g fill="#c9a84c">
+            <circle cx="300" cy="40" r="7"/><circle cx="262" cy="56" r="7"/><circle cx="228" cy="80" r="7"/><circle cx="204" cy="112" r="7"/>
+            <circle cx="194" cy="150" r="7"/><circle cx="204" cy="188" r="7"/><circle cx="228" cy="220" r="7"/><circle cx="262" cy="244" r="7"/><circle cx="300" cy="260" r="7"/>
+          </g>
+          <path d="M300 40 Q160 150 300 260" stroke="#c9a84c" stroke-width="1" fill="none" opacity=".5"/>
+          <path d="M215 95 L270 125" stroke="#c9a84c" stroke-width="1" marker-end="url(#ar)" opacity=".8"/>
+          <path d="M215 205 L270 175" stroke="#c9a84c" stroke-width="1" marker-end="url(#ar)" opacity=".8"/>
+          <text x="20" y="30" fill="#e8d08a" font-size="13" font-family="Cinzel">Crane Wing</text>
+          <text x="20" y="46" fill="#a9b6c2" font-size="11" font-family="Inter">Joseon fleet closes the arc</text>
+          <text x="510" y="350" fill="#a9b6c2" font-size="9" font-family="Inter" text-anchor="end">Schematic — not to scale</text>
+        </svg>
+        <figcaption>The Crane Wing (학익진): lure the enemy into open water, then surround.</figcaption>
+      </figure>
+    </div>
+    <div class="facts">
+      <div class="fact"><b>~70</b><span>Japanese ships at Gyeonnaeryang</span></div>
+      <div class="fact"><b>59</b><span>Enemy ships destroyed</span></div>
+      <div class="fact"><b>1</b><span>Formation that changed the war</span></div>
+    </div>
+    <figure>
+      <div class="slot r21"><div class="slot-inner">
+        <span class="slot-id">IMG-05</span>
+        <span class="slot-desc">The sea off Hansan Island today, or the Jeseungdang command post on Hansan Island</span>
+        <span class="slot-src">Suggested: your own photo or a KOGL Type 1 image (Tongyeong city / heritage agency)</span>
+      </div></div>
+      <figcaption>The waters off Hansan Island, Tongyeong. [Credit line here]</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════════ INTERLUDE: THE FALL ═══════════ -->
+<section class="interlude">
+  <div class="wrap">
+    <div class="label">Between the Battles · 1597</div>
+    <h2>Betrayed by His Own Court</h2>
+    <div class="rule" style="margin-left:auto;margin-right:auto;"></div>
+    <p class="lead">In 1593 Yi became the first Supreme Naval Commander of the Three Provinces. Four years later, a Japanese double agent fed the Korean court a false tip, and Yi was ordered to intercept a Japanese general at sea. He suspected a trap. The general had already landed.</p>
+    <p>Rivals at court seized the moment. Yi was arrested, taken to the capital and interrogated for about a month. He accused no one. Spared from execution, he was sent to serve once more as a common soldier. On the road south, he received news that his mother had died.</p>
+    <p>Months later, at Chilcheollyang, the fleet he had built was destroyed under his successor, Won Gyun. A navy that had numbered over 130 warships and some 13,000 men was all but wiped out. The court had no one else to turn to.</p>
+    <figure style="max-width:900px;margin:2.5rem auto 0;">
+      <div class="slot r21"><div class="slot-inner">
+        <span class="slot-id">IMG-06</span>
+        <span class="slot-desc">Dark, stormy sea — mood image for the fall and the lost fleet</span>
+        <span class="slot-src">Suggested: stock photo with commercial license, or your own photo</span>
+      </div></div>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════════ II. MYEONGNYANG ═══════════ -->
+<section id="myeongnyang" class="battle">
+  <div class="wrap">
+    <div class="battle-head"><span class="battle-num">II</span><div><div class="label">16th day, 9th month, 1597</div><h2 style="margin:0">Myeongnyang</h2></div></div>
+    <div class="rule"></div>
+    <p class="lead">Restored to command, Yi found only twelve warships and about 120 men. The court told him to give up the sea and fight on land. He wrote back that for five or six years the navy alone had kept the enemy out of the southwest — and that he still had twelve ships. If they fought to the death, it could be done.</p>
+    <blockquote>"I still have twelve ships."<cite>Yi Sun-sin's report to the court, 1597 (paraphrased from the Korean record)</cite></blockquote>
+    <p>One more ship joined, bringing his fleet to thirteen. He chose to meet the enemy in the Myeongnyang Strait — the Uldolmok — where the tidal current runs violently through a narrow channel. On the eve of battle he told his commanders, quoting an old military text:</p>
+    <blockquote>"Those who resolve to die shall live. Those who seek to live shall die."<cite>Address to his commanders, the day before Myeongnyang</cite></blockquote>
+
+    <div class="odds" aria-label="13 Joseon ships against 133 Japanese ships">
+      <div class="who"><b>13</b>JOSEON</div>
+      <div class="dots k" id="dotsK"></div>
+      <div class="who jp"><b>133</b>JAPAN</div>
+      <div class="dots j" id="dotsJ"></div>
+    </div>
+
+    <div class="two">
+      <div>
+        <p>When the current turned in his favor, Yi attacked. Thirty-one Japanese ships were destroyed and the enemy commander Kurushima Michifusa was killed. The Japanese fleet withdrew.</p>
+        <p>Yi himself did not call it genius. In his diary he wrote that it had been <em>"truly the grace of heaven."</em></p>
+        <p class="dim">Records differ slightly: some sources give twelve ships for the battle itself. The commonly accepted account is twelve ships at his reappointment and thirteen at Myeongnyang.</p>
+      </div>
+      <figure>
+        <div class="slot r43"><div class="slot-inner">
+          <span class="slot-id">IMG-07</span>
+          <span class="slot-desc">The fast tidal currents of the Uldolmok (Myeongnyang Strait), Haenam–Jindo</span>
+          <span class="slot-src">Suggested: your own photo or a KOGL Type 1 image (Haenam / Jindo county)</span>
+        </div></div>
+        <figcaption>Uldolmok, where the battle was fought. [Credit line here]</figcaption>
+      </figure>
+    </div>
+    <div class="card" style="margin-top:3rem;">
+      <h3>Rebuilding the Navy</h3>
+      <p style="margin-bottom:0">After Myeongnyang, Yi moved his base to Gogeumdo Island. He set up farms and salt and fish trade to feed his men. Soldiers and refugees streamed back, and within months his base was stronger than it had been in the days of Hansan.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ III. NORYANG ═══════════ -->
+<section id="noryang" class="battle">
+  <div class="wrap">
+    <div class="battle-head"><span class="battle-num">III</span><div><div class="label">11th month, 1598</div><h2 style="margin:0">Noryang</h2></div></div>
+    <div class="rule"></div>
+    <div class="two">
+      <div>
+        <p class="lead">By late 1598 the war was ending, and the Japanese gathered their ships to withdraw. Yi refused to let them leave unchallenged. He persuaded the reluctant Ming admiral Chen Lin to join the attack, and during the fighting he came to Chen Lin's rescue.</p>
+        <p>Leading from the front, Yi was struck by a stray bullet. His last order was to keep his death secret:</p>
+        <blockquote>"The battle is at its height. Do not announce my death."<cite>Yi Sun-sin's last words, Noryang, 1598</cite></blockquote>
+        <p>Those beside him hid his body and kept the drums beating. His men fought on without knowing he had fallen, and the withdrawing fleet was heavily defeated. When the truth came out, it was said that <em>the dead Yi Sun-sin had driven off the living enemy.</em></p>
+      </div>
+      <figure>
+        <div class="slot r34"><div class="slot-inner">
+          <span class="slot-id">IMG-08</span>
+          <span class="slot-desc">The Noryang sea, or the Irak-sa shrine at Gwaneumpo, Namhae — where Yi fell</span>
+          <span class="slot-src">Suggested: your own photo or a KOGL Type 1 image (Namhae county)</span>
+        </div></div>
+        <figcaption>Gwaneumpo, Namhae. [Credit line here]</figcaption>
+      </figure>
+    </div>
+    <p class="dim" style="margin-top:2rem;">The battle ran through the night; Korean sources date it to the 18th or 19th day of the 11th lunar month of 1598.</p>
+  </div>
+</section>
+
+<!-- ═══════════ IN THEIR WORDS ═══════════ -->
+<section id="words">
+  <div class="wrap">
+    <div class="label">In Their Words</div>
+    <h2>How Others Saw Him</h2>
+    <div class="rule"></div>
+    <div class="quotes">
+      <div class="card">
+        <p>"A talent that could order heaven and earth; a merit that mended the sky and bathed the sun."</p>
+        <div class="who">Chen Lin, Ming admiral who fought beside him at Noryang</div>
+      </div>
+      <div class="card">
+        <p>"Alas, that the court did not know how to use him, and never let him use his full talent."</p>
+        <div class="who">Official historian, Annals of King Seonjo (paraphrased)</div>
+      </div>
+      <div class="card">
+        <p>"It is always difficult for Englishmen to admit that Nelson ever had an equal in his profession, but if any man is entitled to be so regarded, it should be this great naval commander … who never knew defeat and died in the presence of the enemy."</p>
+        <div class="who">Admiral G. A. Ballard, Royal Navy — <i>The Influence of the Sea on the Political History of Japan</i> (1921), pp. 66–67</div>
+      </div>
+    </div>
+    <div class="gallery">
+      <figure>
+        <div class="slot r43"><div class="slot-inner">
+          <span class="slot-id">IMG-09</span>
+          <span class="slot-desc">Yi Sun-sin and Horatio Nelson side by side — East and West</span>
+          <span class="slot-src">Can reuse "Yi Sun-sin.jpg" and "nelson.png" from the main site (check the Yi image source)</span>
+        </div></div>
+        <figcaption>Two admirals, compared by a British admiral a century ago.</figcaption>
+      </figure>
+      <div class="card" style="display:flex;flex-direction:column;justify-content:center;">
+        <h3>East and West</h3>
+        <p style="margin-bottom:0">Ballard, a British admiral and naval historian, placed Yi beside Nelson more than a hundred years ago. SEAMEN STORIES begins from the same question he raised: what if these two commanders had stood on the same sea?</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ THE WRITER ═══════════ -->
+<section id="writer">
+  <div class="wrap two rev">
+    <figure>
+      <div class="slot r43"><div class="slot-inner">
+        <span class="slot-id">IMG-10</span>
+        <span class="slot-desc">Pages of the Nanjung Ilgi (War Diary) or the Imjin Janggcho (war reports)</span>
+        <span class="slot-src">Check the license: the encyclopedia marks the Imjin Janggcho image "KOGL Type 0" — confirm before use</span>
+      </div></div>
+      <figcaption>Nanjung Ilgi, National Treasure of Korea. [Credit line here]</figcaption>
+    </figure>
+    <div>
+      <div class="label">The Writer</div>
+      <h2>A Diary From the Front Line</h2>
+      <div class="rule"></div>
+      <p>Through the seven years of war, Yi kept a diary — the Nanjung Ilgi. It records battles, weather, supplies and his own grief and doubt, in his own hand. Together with his reports to the court, it is a National Treasure of Korea, and in 2013 it was added to UNESCO's Memory of the World Register.</p>
+      <p>He also wrote poetry. His verses from the camp at Hansan Island are still read in Korea today.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ LEGACY ═══════════ -->
+<section id="legacy">
+  <div class="wrap">
+    <div class="label">Legacy</div>
+    <h2>Remembered for Four Centuries</h2>
+    <div class="rule"></div>
+    <p class="lead">After his death, Yi was honored as a first-rank meritorious subject, and in 1793 he was posthumously named Chief State Councillor, the highest office in the kingdom. His posthumous title, Chungmu, means "Loyal and Martial."</p>
+    <p>Shrines were raised in his memory, the largest being Hyeonchungsa in Asan. His long swords, nearly two meters long, are preserved there as a designated Treasure of Korea. Today his statue stands at the heart of Seoul, on Gwanghwamun Square.</p>
+    <div class="gallery">
+      <figure>
+        <div class="slot r169"><div class="slot-inner">
+          <span class="slot-id">IMG-11</span>
+          <span class="slot-desc">Yi Sun-sin's long swords (Treasure of Korea)</span>
+          <span class="slot-src">Available: "이순신 유물 일괄 중 장검", Encyclopedia of Korean Culture — KOGL Type 1</span>
+        </div></div>
+        <figcaption>Yi Sun-sin's long swords, Hyeonchungsa. Source: Encyclopedia of Korean Culture.</figcaption>
+      </figure>
+      <figure>
+        <div class="slot r169"><div class="slot-inner">
+          <span class="slot-id">IMG-12</span>
+          <span class="slot-desc">Hyeonchungsa shrine, Asan — or the statue of Admiral Yi</span>
+          <span class="slot-src">Available: "아산 이충무공 유허 현충사" or "이순신 장군 동상", Encyclopedia of Korean Culture — KOGL Type 1</span>
+        </div></div>
+        <figcaption>Hyeonchungsa shrine, Asan. Source: Encyclopedia of Korean Culture.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ BRIDGE TO SEAMEN ═══════════ -->
+<section class="bridge">
+  <div class="label">From 1598 to 2047</div>
+  <h2>The Legend Returns</h2>
+  <div class="rule" style="margin-left:auto;margin-right:auto;"></div>
+  <p class="lead">At Noryang, Yi Sun-sin gave his life and hid his death so that his men would win. In SEAMEN STORIES, that same choice — not technology, but sacrifice — is what awakens the Golden Turtle Ship.</p>
+  <div class="bridge-imgs">
+    <img src="Turtle Ship.jpg" alt="SEAMEN STORIES iron-clad turtle ship concept art" />
+    <div class="arrow">→</div>
+    <img src="The Golden Turtle Ship.jpg" alt="SEAMEN STORIES Golden Turtle Ship concept art" />
+  </div>
+  <div class="btns">
+    <a class="btn solid" href="index.html#commanders">Meet the Commanders</a>
+    <a class="btn" href="index.html#turtleship">The Golden Turtle Ship</a>
+  </div>
+</section>
+
+<!-- ═══════════ SOURCES ═══════════ -->
+<section id="sources" style="padding-top:3rem;">
+  <div class="wrap">
+    <div class="label">Sources</div>
+    <ul class="sources">
+      <li>"이순신 (Yi Sun-sin)", <i>Encyclopedia of Korean Culture</i>, Academy of Korean Studies — <a href="https://encykorea.aks.ac.kr/Article/E0044900" target="_blank" rel="noopener">encykorea.aks.ac.kr</a></li>
+      <li>"이순신", "명량해전", "원균", <i>Korean History Online (우리역사넷)</i>, National Institute of Korean History — <a href="https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_n309000&amp;code=kc_age_30" target="_blank" rel="noopener">contents.history.go.kr</a></li>
+      <li>G. A. Ballard, <i>The Influence of the Sea on the Political History of Japan</i> (London: John Murray, 1921), pp. 66–67.</li>
+      <li>UNESCO Memory of the World Register: <i>Nanjung Ilgi: War Diary of Admiral Yi Sun-sin</i> (inscribed 2013).</li>
+    </ul>
+    <p class="dim" style="margin-top:1rem;">Image credits: [add credit lines for each image used].</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <a href="index.html">SEAMEN UNIVERSE</a> · © 2026 Ki Ho Kim · Korean Copyright C-2026-010486 · WGA West #2329744 / #2333497
+</footer>
+
+<script>
+  // 13 vs 133 dots
+  (function(){
+    var k=document.getElementById('dotsK'), j=document.getElementById('dotsJ');
+    for(var i=0;i<13;i++){ k.appendChild(document.createElement('i')); }
+    for(var n=0;n<133;n++){ j.appendChild(document.createElement('i')); }
+  })();
+</script>
+</body>
+</html>
