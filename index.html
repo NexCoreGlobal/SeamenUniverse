@@ -313,6 +313,12 @@
       min-width: 28px; padding-top: .1rem;
     }
 
+    /* ── TRAILER ── */
+    #trailer { padding-top: 90px; }
+    .trailer-frame { position: relative; width: 100%; max-width: 960px; margin: 2rem auto 1.6rem; aspect-ratio: 16/9; border: 1px solid var(--gold-dim); box-shadow: 0 0 60px rgba(201,168,76,.18); background:#000; }
+    .trailer-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .trailer-tag { font-family: 'Cinzel', serif; letter-spacing: .12em; color: var(--gold-lt); font-size: 1rem; line-height: 1.9; }
+    .trailer-tag span { color: var(--gray); font-size: .9rem; }
     /* ── TURTLE SHIP ─────────────────────────────── */
     #turtleship { background: transparent; }
     .ship-evolution {
@@ -511,6 +517,7 @@
 <nav>
   <a class="nav-brand" href="#hero">SEAMEN UNIVERSE</a>
   <ul class="nav-links">
+    <li><a href="#trailer">Trailer</a></li>
     <li><a href="#concept">Concept</a></li>
     <li><a href="#commanders">Commanders</a></li>
     <li><a href="yi-sun-sin.html">Yi Sun-sin</a></li>
@@ -534,13 +541,26 @@
       to lead its last fleet against an alien civilization awakened from the deep.
     </p>
     <div class="hero-cta-group">
-      <a class="btn btn-solid" href="#contact">Request Pitch Deck</a>
-      <a class="btn" href="#concept">Explore the Universe</a>
+      <a class="btn btn-solid" href="#trailer">▶ Watch the Trailer</a>
+      <a class="btn" href="#contact">Request Pitch Deck</a>
     </div>
   </div>
   <div class="waves" aria-hidden="true">
     <div class="layer"><svg class="w2" viewBox="0 0 2880 120" preserveAspectRatio="none"><path fill="rgba(159,211,230,.07)" d="M0 60 C240 20 480 100 720 60 S1200 20 1440 60 S1920 100 2160 60 S2640 20 2880 60 V120 H0Z"/></svg></div>
     <div class="layer"><svg class="w1" viewBox="0 0 2880 120" preserveAspectRatio="none"><path fill="rgba(159,211,230,.11)" d="M0 80 C200 50 520 110 720 80 S1240 50 1440 80 S1960 110 2160 80 S2680 50 2880 80 V120 H0Z"/></svg></div>
+  </div>
+</section>
+
+<!-- TRAILER -->
+<section id="trailer">
+  <div class="section-inner" style="text-align:center">
+    <span class="eyebrow">Concept Trailer</span>
+    <h2>Two Legends. One Last Fleet.</h2>
+    <div class="section-rule" style="margin-left:auto;margin-right:auto"></div>
+    <div class="trailer-frame">
+      <iframe src="https://www.youtube-nocookie.com/embed/PH9h7cdRxDA?rel=0" title="SEAMEN STORIES — Concept Trailer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <p class="trailer-tag">Nelson creates the breach. Yi Sun-sin leads them through.<br><span>Beyond the gold, a final form awaits.</span></p>
   </div>
 </section>
 
@@ -592,8 +612,8 @@
         <ul class="commander-traits">
           <li>Victories at Hansan, Myeongnyang and Noryang</li>
           <li>Commanded the Joseon fleet through the Imjin War, 1592–1598</li>
-          <li>Tidal traps · psychological warfare · sacrifice</li>
-          <li>Awakens the Golden Turtle Ship through self-sacrifice</li>
+          <li>Tidal traps · psychological warfare · protection</li>
+          <li>Awakens the Golden Turtle Ship through responsibility for his people</li>
         </ul>
         <a class="commander-link" href="yi-sun-sin.html">Who was the real Yi Sun-sin? &rarr;</a>
         <p class="commander-quote">"살고자 하면 죽고, 죽고자 하면 산다."<br><em style="font-size:1.06rem;color:var(--gray)">"Those who seek life will die; those who seek death will live."</em></p>
@@ -633,7 +653,7 @@
         <tr><td>Core Philosophy</td><td>Protect those worth protecting</td><td>Win at any cost</td></tr>
         <tr><td>Combat Style</td><td>Terrain traps · tidal control</td><td>Crossing the T · frontal assault</td></tr>
         <tr><td>Strategic Role</td><td>The Moral Axis</td><td>The Spearhead</td></tr>
-        <tr><td>Character Arc</td><td>Sacrifice → legend</td><td>Skeptic → believer → witness</td></tr>
+        <tr><td>Character Arc</td><td>Responsibility → legend</td><td>Skeptic → believer → witness</td></tr>
         <tr><td>Awakening</td><td>Golden Turtle Ship</td><td>Breakthrough — creates the gap</td></tr>
       </tbody>
     </table>
@@ -672,7 +692,7 @@
     <span class="eyebrow">The Golden Turtle Ship</span>
     <h2>武器가 아닌, 象徵<br><span style="font-size:.6em;color:var(--gray)">Not a Weapon. A Symbol.</span></h2>
     <div class="section-rule"></div>
-    <p style="max-width:640px">Built on the spirit of the Bukhyeonmu (北玄武) — the Black Tortoise of the North, one of the Four Guardians of East Asian mythology — the iron-clad turtle ship sails into the final battle cold and dark. When everything is at stake, it awakens in gold. It cannot be awakened by technology. Only by human will.</p>
+    <p style="max-width:640px">Born from the spirit of an ancient guardian of the northern seas, the iron-clad turtle ship sails into the final battle cold and dark. When everything is at stake, it awakens in gold. It cannot be awakened by technology. Only by human will.</p>
 
     <div class="ship-evolution">
       <div class="ship-stage">
@@ -697,9 +717,9 @@
 
     <div class="abilities-grid">
       <div class="ability-card">
-        <span class="icon">🐢</span>
-        <h4>Black Turtle Barrier</h4>
-        <p>Nano-alloy armor transforms into Bukhyeonmu's shell — reflects and reverses all Abyss attacks.</p>
+        <span class="icon">🛡️</span>
+        <h4>Guardian Barrier</h4>
+        <p>Nano-alloy armor hardens into an unbreakable shell — reflects and reverses all Abyss attacks.</p>
       </div>
       <div class="ability-card">
         <span class="icon">🐉</span>
@@ -714,9 +734,9 @@
     </div>
 
     <div class="awakening-trigger">
-      "Awakening Condition: The moment Yi Sun-sin places the lives of his crew and people above his own —<br>
-      not technology, but sacrifice, is the trigger."<br>
-      <span style="font-size:1.06rem;color:var(--gray);font-style:normal">"나는 돌아오지 않을 것이다. 그러나 인류는 살 것이다."</span>
+      "Awakening Condition: The moment Yi Sun-sin chooses to shield his crew and his people —<br>
+      not technology, but responsibility, awakens the gold."<br>
+      <span style="font-size:1.06rem;color:var(--gray);font-style:normal">"전속 전진. 균열로 들어간다." — "Full speed ahead. Into the breach."</span>
     </div>
   </div>
 </section>
